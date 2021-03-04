@@ -13,8 +13,8 @@ $OS_NAME = "";
 $OS_VER = "";
 $WEBPROG = "";
   
-function command_exist($cmd): bool {
-    $return = shell_exec(sprintf("which %s", escapeshellarg($cmd)));
+function command_exist(string $cmd): bool {
+    $return = exec("which " . $cmd);
     return !empty($return);
 }
 
