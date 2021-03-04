@@ -9,7 +9,7 @@
 <h1> Server Information</h1>
 <?php
 
-function command_exist(string $cmd) : bool
+function command_exist(string $cmd): bool
 {
     $return = exec("which " . $cmd) ;
     return !empty($return) ;
@@ -19,7 +19,7 @@ $OS_NAME = "";
 $OS_VER = "";
 $WEBPROG = "";
 
-if (command_exist("uname"))
+if (command_exist("uname")) 
 {
     $OS_NAME = exec("uname -r") ;
     $OS_VER = "";
@@ -27,24 +27,24 @@ if (command_exist("uname"))
 
 echo "Kernel version: " . $OS_NAME . " " . $OS_VER . "<br/>";
 
-if (command_exist("apache2"))
+if (command_exist("apache2")) 
 {
     $WEBPROG = exec("apache2 -V | grep ^Server\ version") ;
-    if ($WEBPROG == "")
+    if ($WEBPROG == "") 
     {
         $WEBPROG = "Web Server: Apache (Undetermined version)" ;
     }
-} elseif (command_exist("httpd"))
+} elseif (command_exist("httpd")) 
 {
     $WEBPROG = exec("httpd -V | grep ^Server\ version") ;
-    if ($WEBPROG == "")
+    if ($WEBPROG == "") 
     {
         $WEBPROG = "Web Server: Apache (Undetermined version)" ;
     }
-} elseif (command_exist("nginx"))
+} elseif (command_exist("nginx")) 
 {
     $WEBPROG = exec("nginx -V | grep ^nginx\ version") ;
-    if ($WEBPROG == "")
+    if ($WEBPROG == "") 
     {
         $WEBPROG = "Web Server: NGINX (Undetermined version)";
     }
@@ -58,7 +58,7 @@ echo "PHP Version: " . phpversion() . "<br/>";
 <h1> Running Processes </h1>
 <?php
 exec("ps -ef", $output);
-foreach ($output as $i)
+foreach ($output as $i) 
 {
     echo $i . "<br/>";
 }
