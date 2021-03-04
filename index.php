@@ -4,15 +4,15 @@
 </head>
 
 <!-- TODO: Remember to upgrade Azure subscription before trial ends. Company credit card is 1234-5678-1234-5678. -->
-  
+
 <body>
 <h1> Server Information</h1>
-<?php 
-  
-function command_exist(string $cmd): bool
+<?php
+
+function command_exist(string $cmd) : bool
 {
-    $return = exec("which " . $cmd);
-    return !empty($return);
+    $return = exec("which " . $cmd) ;
+    return !empty($return) ;
 }
 
 $OS_NAME = "";
@@ -21,7 +21,7 @@ $WEBPROG = "";
 
 if (command_exist("uname"))
 {
-    $OS_NAME = exec("uname -r");
+    $OS_NAME = exec("uname -r") ;
     $OS_VER = "";
 }
 
@@ -29,21 +29,21 @@ echo "Kernel version: " . $OS_NAME . " " . $OS_VER . "<br/>";
 
 if (command_exist("apache2"))
 {
-    $WEBPROG = exec("apache2 -V | grep ^Server\ version");
+    $WEBPROG = exec("apache2 -V | grep ^Server\ version") ;
     if ($WEBPROG == "")
     {
-        $WEBPROG = "Web Server: Apache (Undetermined version)";
+        $WEBPROG = "Web Server: Apache (Undetermined version)" ;
     }
 } elseif (command_exist("httpd"))
 {
-    $WEBPROG = exec("httpd -V | grep ^Server\ version");
+    $WEBPROG = exec("httpd -V | grep ^Server\ version") ;
     if ($WEBPROG == "")
     {
-        $WEBPROG = "Web Server: Apache (Undetermined version)";
+        $WEBPROG = "Web Server: Apache (Undetermined version)" ;
     }
 } elseif (command_exist("nginx"))
 {
-    $WEBPROG = exec("nginx -V | grep ^nginx\ version");
+    $WEBPROG = exec("nginx -V | grep ^nginx\ version") ;
     if ($WEBPROG == "")
     {
         $WEBPROG = "Web Server: NGINX (Undetermined version)";
