@@ -1,6 +1,7 @@
 # which-reality
 
 [![Lint Checks](https://github.com/sec488/which-reality/actions/workflows/linter.yml/badge.svg)](https://github.com/sec488/which-reality/actions/workflows/linter.yml)
+[![Security Scan](https://github.com/sec488/which-reality/actions/workflows/owasp.yml/badge.svg)](https://github.com/sec488/which-reality/actions/workflows/owasp.yml)
 
 PHP code to determine which reality (Server OS and web app versions) the app is running in (yeah... it's a play on Rick and Morty)
 

@@ -9,7 +9,11 @@
 <h1> Server Information</h1>
 <?php 
 
-function command_exist($cmd) {
+$OS_NAME = "";
+$OS_VER = "";
+$WEBPROG = "";
+  
+function command_exist($cmd): bool {
     $return = shell_exec(sprintf("which %s", escapeshellarg($cmd)));
     return !empty($return);
 }
