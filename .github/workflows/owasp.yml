@@ -28,7 +28,7 @@ jobs:
 
     # Run OWASP Scan and create Issue of results
     - name: OWASP ZAP Full Scan
-      uses: zaproxy/action-full-scan@v0.2.0
+      uses: zaproxy/action-baseline@v0.4.0
       with:
         # Target URL of PHP container
         target: http://172.17.0.2
