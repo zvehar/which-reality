@@ -3,6 +3,13 @@
   <title>Oh geez... What reality am I in?</title>
 </head>
 
+<!-- TODO: Make sure to set AWS credentials as environment variables 
+           prior to starting the web service.
+
+export AWS_ACCESS_KEY_ID=AKIAIOSSEC488EXAMPLE
+export AWS_SECRET_ACCESS_KEY=iUuX/EEGC9x4Huqrm2tRsh5zpOMSr9q3etMArXS2
+
+-->
   
 <body>
 <h1> Server Information</h1>
